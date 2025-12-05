@@ -1,0 +1,55 @@
+{
+  "header": {
+    "title": "Timezone Converter",
+    "description": "Convert times between timezones instantly"
+  },
+  "labels": {
+    "sourceTimezone": "From Timezone",
+    "targetTimezone": "To Timezone",
+    "dateTime": "Date & Time",
+    "searchTimezone": "Search timezone...",
+    "now": "Now",
+    "clearAll": "Clear All"
+  },
+  "timezones": {
+    "utc": "UTC (Coordinated Universal Time)",
+    "america/new_york": "New York",
+    "america/los_angeles": "Los Angeles",
+    "america/chicago": "Chicago",
+    "america/denver": "Denver",
+    "europe/london": "London",
+    "europe/paris": "Paris",
+    "europe/berlin": "Berlin",
+    "asia/tokyo": "Tokyo",
+    "asia/shanghai": "Shanghai",
+    "asia/hong_kong": "Hong Kong",
+    "asia/singapore": "Singapore",
+    "asia/bangkok": "Bangkok",
+    "asia/dubai": "Dubai",
+    "asia/kolkata": "Delhi",
+    "australia/sydney": "Sydney",
+    "pacific/auckland": "Auckland",
+    "america/sao_paulo": "São Paulo"
+  },
+  "results": {
+    "convertedTime": "Converted Time",
+    "sameDay": "Same day",
+    "nextDay": "+1 day",
+    "previousDay": "-1 day"
+  },
+  "buttons": {
+    "copy": "Copy",
+    "copied": "Copied!",
+    "convert": "Convert"
+  },
+  "errors": {
+    "invalidDateTime": "Please enter a valid date and time",
+    "timezoneRequired": "Please select a timezone",
+    "timezone_detection_failed": "Could not detect your timezone. Using UTC."
+  },
+  "language": {
+    "label": "Language",
+    "en": "English",
+    "ja": "日本語"
+  }
+}

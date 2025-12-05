@@ -1,0 +1,55 @@
+{
+  "header": {
+    "title": "タイムゾーン変換ツール",
+    "description": "タイムゾーン間で時刻を即座に変換"
+  },
+  "labels": {
+    "sourceTimezone": "元のタイムゾーン",
+    "targetTimezone": "変換先タイムゾーン",
+    "dateTime": "日付と時刻",
+    "searchTimezone": "タイムゾーンを検索...",
+    "now": "現在時刻",
+    "clearAll": "すべてクリア"
+  },
+  "timezones": {
+    "utc": "UTC（協定世界時）",
+    "america/new_york": "ニューヨーク",
+    "america/los_angeles": "ロサンゼルス",
+    "america/chicago": "シカゴ",
+    "america/denver": "デンバー",
+    "europe/london": "ロンドン",
+    "europe/paris": "パリ",
+    "europe/berlin": "ベルリン",
+    "asia/tokyo": "東京",
+    "asia/shanghai": "上海",
+    "asia/hong_kong": "香港",
+    "asia/singapore": "シンガポール",
+    "asia/bangkok": "バンコク",
+    "asia/dubai": "ドバイ",
+    "asia/kolkata": "デリー",
+    "australia/sydney": "シドニー",
+    "pacific/auckland": "オークランド",
+    "america/sao_paulo": "サンパウロ"
+  },
+  "results": {
+    "convertedTime": "変換された時刻",
+    "sameDay": "同じ日",
+    "nextDay": "+1 日",
+    "previousDay": "-1 日"
+  },
+  "buttons": {
+    "copy": "コピー",
+    "copied": "コピーしました！",
+    "convert": "変換"
+  },
+  "errors": {
+    "invalidDateTime": "有効な日時を入力してください",
+    "timezoneRequired": "タイムゾーンを選択してください",
+    "timezone_detection_failed": "あなたのタイムゾーンを検出できませんでした。UTCを使用します。"
+  },
+  "language": {
+    "label": "言語",
+    "en": "English",
+    "ja": "日本語"
+  }
+}
