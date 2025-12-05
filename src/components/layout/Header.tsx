@@ -11,7 +11,14 @@ export function Header() {
   useEffect(() => {
     const updateTheme = () => {
       const theme = localStorage.getItem("theme");
-      setIsDark(theme === "dark");
+      const isDarkMode = theme === "dark";
+      setIsDark(isDarkMode);
+
+      if (isDarkMode) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      } else {
+        document.documentElement.removeAttribute("data-theme");
+      }
     };
 
     updateTheme();
@@ -29,12 +36,11 @@ export function Header() {
   return (
     <header
       style={{
-        borderBottom: `1px solid ${isDark ? "#2d3748" : "#e2e8f0"}`,
-        backgroundColor: isDark ? "#1a202c" : "#ffffff",
+        borderBottomWidth: "1px",
+        borderBottomStyle: "solid",
         position: "sticky",
         top: 0,
         zIndex: 50,
-        transition: "all 0.3s ease",
       }}
     >
       <div
@@ -58,7 +64,6 @@ export function Header() {
               style={{
                 fontSize: "clamp(1.1rem, 4.5vw, 1.6rem)",
                 fontWeight: "700",
-                color: isDark ? "#ffffff" : "#1a202c",
                 margin: 0,
                 whiteSpace: "nowrap",
               }}
@@ -68,7 +73,6 @@ export function Header() {
             <p
               style={{
                 fontSize: "clamp(0.7rem, 2.5vw, 0.8rem)",
-                color: isDark ? "#cbd5e1" : "#666",
                 marginTop: "0.25rem",
                 marginBottom: 0,
               }}

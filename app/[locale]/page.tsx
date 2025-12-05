@@ -23,6 +23,7 @@ export default function TimezonePage() {
   const locale = useLocale();
 
   const [isDark, setIsDark] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const [sourceTimezone, setSourceTimezone, sourceHydrated] = useLocalStorage<Timezone>(
     'tz_source',
     getLocalTimezone()
@@ -39,9 +40,17 @@ export default function TimezonePage() {
   const [copyToast, setCopyToast] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const updateTheme = () => {
       const theme = localStorage.getItem('theme');
-      setIsDark(theme === 'dark');
+      const isDarkMode = theme === 'dark';
+      setIsDark(isDarkMode);
+
+      if (isDarkMode) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+      }
     };
 
     updateTheme();
@@ -103,11 +112,10 @@ export default function TimezonePage() {
     setError('');
   };
 
-  if (!sourceHydrated || !targetHydrated) {
+  if (!sourceHydrated || !targetHydrated || !mounted) {
     return (
       <div style={{
         minHeight: '100vh',
-        backgroundColor: isDark ? '#0f1419' : '#f5f5f5',
         display: 'flex',
         flexDirection: 'column'
       }}>
@@ -120,7 +128,7 @@ export default function TimezonePage() {
   }
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: isDark ? '#0f1419' : '#f5f5f5' }}>
+    <div style={{ minHeight: '100vh' }}>
       <Header />
 
       {copyToast && (
