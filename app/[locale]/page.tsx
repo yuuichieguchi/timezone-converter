@@ -91,7 +91,7 @@ export default function TimezonePage() {
       try {
         await navigator.clipboard.writeText(conversionResult.time);
         setCopyToast(true);
-        setTimeout(() => setCopyToast(false), 2000);
+        setTimeout(() => setCopyToast(false), 2200);
       } catch {
         setError('Failed to copy to clipboard');
       }
@@ -137,7 +137,7 @@ export default function TimezonePage() {
           fontSize: '0.875rem',
           fontWeight: '500',
           zIndex: 50,
-          animation: 'fadeInOut 0.3s ease-in-out'
+          animation: 'fadeInOut 2.2s ease-in-out'
         }}>
           {t('buttons.copied')}
         </div>
