@@ -49,15 +49,16 @@ export function Header() {
         }}>
           <div>
             <h1 style={{
-              fontSize: '1.875rem',
+              fontSize: 'clamp(1.1rem, 4.5vw, 1.6rem)',
               fontWeight: '700',
               color: isDark ? '#ffffff' : '#1a202c',
-              margin: 0
+              margin: 0,
+              whiteSpace: 'nowrap'
             }}>
               {t('title')}
             </h1>
             <p style={{
-              fontSize: '0.875rem',
+              fontSize: 'clamp(0.7rem, 2.5vw, 0.8rem)',
               color: isDark ? '#cbd5e1' : '#666',
               marginTop: '0.25rem',
               marginBottom: 0
