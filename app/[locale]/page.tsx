@@ -36,6 +36,7 @@ export default function TimezonePage() {
   const [targetTimezoneObj, setTargetTimezoneObj] = useState<Timezone>(targetTimezone);
   const [dateTimeString, setDateTimeString] = useState(formatToDateTimeLocal(new Date()));
   const [error, setError] = useState<string>('');
+  const [copyToast, setCopyToast] = useState(false);
 
   useEffect(() => {
     const updateTheme = () => {
@@ -89,6 +90,8 @@ export default function TimezonePage() {
     if (conversionResult) {
       try {
         await navigator.clipboard.writeText(conversionResult.time);
+        setCopyToast(true);
+        setTimeout(() => setCopyToast(false), 2000);
       } catch {
         setError('Failed to copy to clipboard');
       }
@@ -119,6 +122,26 @@ export default function TimezonePage() {
   return (
     <div style={{ minHeight: '100vh', backgroundColor: isDark ? '#0f1419' : '#f5f5f5' }}>
       <Header />
+
+      {copyToast && (
+        <div style={{
+          position: 'fixed',
+          bottom: '2rem',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          backgroundColor: '#10b981',
+          color: '#ffffff',
+          padding: '1rem 1.5rem',
+          borderRadius: '0.5rem',
+          boxShadow: '0 10px 25px rgba(0, 0, 0, 0.2)',
+          fontSize: '0.875rem',
+          fontWeight: '500',
+          zIndex: 50,
+          animation: 'fadeInOut 0.3s ease-in-out'
+        }}>
+          {t('buttons.copied')}
+        </div>
+      )}
 
       <main style={{
         maxWidth: '1440px',
