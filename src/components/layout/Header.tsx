@@ -57,7 +57,7 @@ export function Header() {
             <h1
               style={{
                 fontSize: "clamp(1.1rem, 4.5vw, 1.6rem)",
-                fontWeight: "600",
+                fontWeight: "700",
                 color: isDark ? "#ffffff" : "#1a202c",
                 margin: 0,
                 whiteSpace: "nowrap",
