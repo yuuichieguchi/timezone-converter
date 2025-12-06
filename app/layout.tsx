@@ -4,6 +4,9 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Timezone Converter",
   description: "Convert times between timezones with automatic DST handling",
+  verification: {
+    google: "qDjNwUaLfOwddmNI75rPqLANJJNBCRsKXySsNayn_ZI",
+  },
 };
 
 export default function RootLayout({
